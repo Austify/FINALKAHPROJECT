@@ -109,9 +109,6 @@ namespace FINALKAHPROJECT.Auth
         }
 
 
-        private object AuthJwtToken(string token)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

@@ -11,7 +11,8 @@ namespace FINALKAHPROJECT.Auth
 {
     public static class JwtAuthManager
     {
-        public const string SecretKey = "JIOBLi6eVjBpvGtWBgJzjWd2QH0sOn5tI8rIFXSHKijXWEt/3J2jFYL79DQ1vKu+EtTYgYkwTluFRDdtF41yAQ==";
+        public static HMACSHA256 Secret = GetSecretKey();
+        public static string SecretKey = Convert.ToBase64String(Secret.Key);
         public static string GenerateJWTToken(string username,int expire_in_minutes = 10)
         {
             var symmetric_key = Convert.FromBase64String(SecretKey);
@@ -55,6 +56,12 @@ namespace FINALKAHPROJECT.Auth
             {
                 return null;
             }
+        }
+
+        private static HMACSHA256 GetSecretKey()
+        {
+            HMACSHA256 hmacsha256 = new HMACSHA256();
+            return hmacsha256;
         }
 
 

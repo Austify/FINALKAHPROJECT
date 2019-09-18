@@ -3,18 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Threading;
+using System.Web.Http;
+using System.Net;
 
 namespace FINALKAHPROJECT.Auth
 {
-    public class AuthFailureResult
+    public class AuthFailureResult : IHttpActionResult
     {
-        private string v;
-        private HttpRequestMessage request;
-
-        public AuthFailureResult(string v, HttpRequestMessage request)
+        public AuthFailureResult(string reasonPhrase, HttpRequestMessage request)
         {
-            this.v = v;
-            this.request = request;
+            ReasonPhrase = reasonPhrase;
+            Request = request;
+        }
+        public string ReasonPhrase { get; }
+        public HttpRequestMessage Request { get; }
+
+        public Task<HttpResponseMessage> ExecuteAsync(CancellationToken cancellationToken)
+        {
+            return Task.FromResult(Execute());
+        }
+
+        private HttpResponseMessage Execute()
+        {
+            HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.Unauthorized)
+            {
+                RequestMessage = Request,
+                ReasonPhrase = ReasonPhrase
+            };
+            return response;
         }
     }
 }

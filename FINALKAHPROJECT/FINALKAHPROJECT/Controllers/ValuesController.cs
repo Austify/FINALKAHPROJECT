@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FINALKAHPROJECT.Auth;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FINALKAHPROJECT.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class ValuesController
     {
+        [JwtAuthentication]
+        public string Get()
+        {
+            return "Hello from Code-Adda.com";
+        }
         // GET api/values
-        [HttpGet]
+      /**  [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "value1", "value2" };
@@ -22,7 +28,7 @@ namespace FINALKAHPROJECT.Controllers
         public ActionResult<string> Get(int id)
         {
             return "value";
-        }
+        }**/
 
         // POST api/values
         [HttpPost]
