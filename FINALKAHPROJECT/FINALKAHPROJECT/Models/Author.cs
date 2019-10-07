@@ -10,7 +10,6 @@ namespace FINALKAHPROJECT.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime Date_Created { get; set; }
-
         public ICollection<ComicAuthor> ComicAuthors { get; set; }
     }
 }
