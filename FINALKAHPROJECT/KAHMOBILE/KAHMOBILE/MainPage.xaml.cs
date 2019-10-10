@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace KAHMOBILE
 {
@@ -16,6 +18,15 @@ namespace KAHMOBILE
         public MainPage()
         {
             InitializeComponent();
+            Comic();
+        }
+
+        public async void Comic()
+        {
+            var httpClient = new HttpClient();
+            var response = await httpClient.GetStringAsync("https://localhost:44360/api/comic");
+            var comic = JsonConvert.DeserializeObject<List<Comic>>(response);
+            comicList.ItemsSource = comic;
         }
     }
 }

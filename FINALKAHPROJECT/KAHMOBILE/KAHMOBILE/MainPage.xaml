@@ -5,12 +5,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="KAHMOBILE.MainPage">
-
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Kah Comics!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
-
+    <ListView x:Name="comicList">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <!-- Place new controls here -->
+                        <Label Text="Welcome to Kah Comics!" 
+                          HorizontalOptions="Center"
+                          VerticalOptions="CenterAndExpand" />
+                        <Label Text="{Binding Title }" />
+                        <Label Text="{Binding Date_Created}" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
