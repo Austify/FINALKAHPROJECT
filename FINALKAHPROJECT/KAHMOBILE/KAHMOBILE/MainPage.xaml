@@ -11,11 +11,12 @@
                 <ViewCell>
                     <StackLayout>
                         <!-- Place new controls here -->
-                        <Label Text="Welcome to Kah Comics!" 
+                        <Label Text="Welcome to Dah Comics!" 
                           HorizontalOptions="Center"
                           VerticalOptions="CenterAndExpand" />
-                        <Label Text="{Binding Title }" />
-                        <Label Text="{Binding Date_Created}" />
+                      
+                        
+                        <Image Source="{Binding ComicImageUrl}" />
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

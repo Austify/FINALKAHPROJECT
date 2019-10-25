@@ -24,7 +24,7 @@ namespace KAHMOBILE
         public async void Comic()
         {
             using(var httpClient = new HttpClient()){
-                var response = await httpClient.GetStringAsync("https://127.0.0.1:44360/api/comic");
+                var response = await httpClient.GetStringAsync(" http://10.0.2.2:56745/api/comic");
                 var comic = JsonConvert.DeserializeObject<List<Comic>>(response);
                 comicList.ItemsSource = comic;
             }

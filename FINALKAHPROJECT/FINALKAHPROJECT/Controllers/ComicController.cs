@@ -15,7 +15,7 @@ namespace FINALKAHPROJECT.Controllers
         public ComicController(ApplicationDbContext context)
         {
             _context = context;
-           //eturn View();
+           //return View();
         }
      
         [HttpGet]
