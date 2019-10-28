@@ -14,8 +14,7 @@
                         <Label Text="Welcome to Dah Comics!" 
                           HorizontalOptions="Center"
                           VerticalOptions="CenterAndExpand" />
-                      
-                        
+                        <Label Text="{Binding Title}" />
                         <Image Source="{Binding ComicImageUrl}" />
                     </StackLayout>
                 </ViewCell>

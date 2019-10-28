@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FINALKAHPROJECT.Models;
-
+using System.IO;
 namespace FINALKAHPROJECT.Controllers
 {
     [Route("api/[controller]")]
@@ -23,7 +23,6 @@ namespace FINALKAHPROJECT.Controllers
         {
             return _context.comic.ToList();
         }
-
 
     }
 }
