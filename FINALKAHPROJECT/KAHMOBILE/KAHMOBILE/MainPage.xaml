@@ -9,13 +9,17 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout>
+                    <StackLayout >
                         <!-- Place new controls here -->
-                        <Label Text="Welcome to Dah Comics!" 
+                        <Label Text="Welcome to KAH Comics!" 
                           HorizontalOptions="Center"
                           VerticalOptions="CenterAndExpand" />
-                        <Label Text="{Binding Title}" />
-                        <Image Source="{Binding ComicImageUrl}" />
+                        <Image Source="{Binding ComicImageUrl}"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand"
+                         Aspect="AspectFit"
+                         WidthRequest="150"
+                         HeightRequest="150"/>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

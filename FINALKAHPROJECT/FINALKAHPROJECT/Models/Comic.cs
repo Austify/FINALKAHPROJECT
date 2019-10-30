@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FINALKAHPROJECT.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace FINALKAHPROJECT.Models
 {
@@ -12,7 +13,6 @@ namespace FINALKAHPROJECT.Models
         public string Title { get; set; }
         public string ComicImageUrl { get; set; }
         public DateTime Date_Created { get; set; }
-
         public ICollection<ComicAuthor> ComicAuthors{ get; set; }
         public int GenreId { get; set; }
         public Genre Genre { get; set; }
