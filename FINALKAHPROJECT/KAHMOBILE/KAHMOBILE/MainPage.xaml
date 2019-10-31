@@ -5,21 +5,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="KAHMOBILE.MainPage">
-    <ListView x:Name="comicList">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout >
+    <ListView x:Name="comicList" HeightRequest="700">
+        <ListView.ItemTemplate >
+            <DataTemplate >
+                <ViewCell Height="800">
+                    <StackLayout HeightRequest="500" >
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ComicTapped" />
+                        </StackLayout.GestureRecognizers>
                         <!-- Place new controls here -->
-                        <Label Text="Welcome to KAH Comics!" 
+                        <Label Text="{Binding Id}" IsVisible="False"
+                         x:Name="comicId"/>
+                        <Image Source="{Binding ComicImageUrl}" WidthRequest="300" />
+                        <Label Text="{Binding Title}"
                           HorizontalOptions="Center"
-                          VerticalOptions="CenterAndExpand" />
-                        <Image Source="{Binding ComicImageUrl}"
-                         HorizontalOptions="FillAndExpand"
-                         VerticalOptions="FillAndExpand"
-                         Aspect="AspectFit"
-                         WidthRequest="150"
-                         HeightRequest="150"/>
+                          VerticalOptions="CenterAndExpand"/>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

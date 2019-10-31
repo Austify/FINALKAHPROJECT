@@ -29,5 +29,10 @@ namespace KAHMOBILE
                 comicList.ItemsSource = comic;
             }
         }
+
+        void ComicTapped(object s,EventArgs e)
+        {
+            
+        }
     }
 }
